@@ -1,0 +1,30 @@
+<% map_export_settings = map_set.map_export_settings.first -%>
+; .S created with
+; GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBM
+;
+; .GBM created with
+; <%= map_set.producers.first.name %> (v<%= map_set.producers.first.version %>)
+; <%= map_set.producers.first.info %>
+
+.area _CODE_<%= map_export_settings.bank -%>
+
+<% map_set.maps.each do |map| -%>
+<% map_tile_data = map_set.map_tile_data(map.master_id).first -%>
+
+; Map <%= "(#{map.name})" unless map.name.nil? %>
+
+.globl _<%= map_export_settings.label_name %>
+.dw _<%= map_export_settings.label_name %>
+
+_<%= map_export_settings.label_name %>:
+<% (1..map.height).each do |row| -%>
+<% row_tile_data = map_tile_data.row(map.width, row) -%>
+<% if !row_tile_data.nil? -%>
+.db <%= map_tile_data
+    .row(map.width, row)
+    .map {|x| sprintf("0x%02x", x.tile_number) }
+    .join(',')
+%>
+<% end -%>
+<% end -%>
+<% end %>

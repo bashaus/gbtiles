@@ -1,0 +1,19 @@
+<% map_export_settings = map_set.map_export_settings.first -%>
+/**
+ * .H created with
+ * GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBM
+ *
+ * .GBM created with
+ * <%= map_set.producers.first.name %> (v<%= map_set.producers.first.version %>)
+ * <%= map_set.producers.first.info %>
+ */
+
+<% map_set.maps.each do |map| -%>
+// Helper: Map dimensions
+#define <%= map_export_settings.label_name %>Width <%= map.width %>
+#define <%= map_export_settings.label_name %>Height <%= map.height %>
+#define <%= map_export_settings.label_name %>Bank <%= map_export_settings.bank %>
+
+// Extern: <%= map_export_settings.label_name %>
+extern unsigned char <%= map_export_settings.label_name %>[];
+<% end %>

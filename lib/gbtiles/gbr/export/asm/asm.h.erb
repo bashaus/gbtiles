@@ -1,0 +1,15 @@
+<% tile_export = tile_set.tile_export.first -%>
+/**
+ * .H created with
+ * GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBR
+ *
+ * .GBR created with
+ * <%= tile_set.producers.first.name %> (v<%= tile_set.producers.first.version %>)
+ * <%= tile_set.producers.first.info %>
+ */
+
+// Helper: The bank the tiles were saved as
+#define <%= tile_export.label_name %>Bank <%= tile_export.bank %>
+
+// Extern: A placeholder for the data
+extern unsigned char <%= tile_export.label_name %>[];

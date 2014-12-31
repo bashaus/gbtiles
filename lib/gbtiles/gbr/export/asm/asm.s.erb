@@ -1,0 +1,17 @@
+<% tile_export = tile_set.tile_export.first -%>
+; .S created with
+; GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBR
+;
+; .GBR created with
+; <%= tile_set.producers.first.name %> (v<%= tile_set.producers.first.version %>)
+; <%= tile_set.producers.first.info %>
+
+.area _CODE_<%= tile_export.bank %>
+
+.globl _<%= tile_export.label_name %>
+.dw _<%= tile_export.label_name %>
+
+_<%= tile_export.label_name %>:
+<% (tile_export.from..tile_export.upto).each do |i| -%>
+.db <%= tile_set.tile_data.first.render_tile(i) %>
+<% end %>

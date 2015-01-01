@@ -17,11 +17,10 @@
 .dw _<%= map_export_settings.label_name %>
 
 _<%= map_export_settings.label_name %>:
-<% (1..map.height).each do |row| -%>
-<% row_tile_data = map_tile_data.row(map.width, row) -%>
+<% (1..(map.width*map.height/16.0).ceil).each do |row| -%>
+<% row_tile_data = map_tile_data.row(row, 16) -%>
 <% if !row_tile_data.nil? -%>
-.db <%= map_tile_data
-    .row(map.width, row)
+.db <%= row_tile_data
     .map {|x| sprintf("0x%02x", x.tile_number) }
     .join(',')
 %>

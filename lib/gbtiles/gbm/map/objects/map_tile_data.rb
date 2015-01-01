@@ -30,7 +30,7 @@ module GBTiles
             object
           end
 
-          def row width, row
+          def row row, width = 16
             @records[(width * (row - 1))..((width * row) - 1)]
           end
         end

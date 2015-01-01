@@ -39,7 +39,8 @@ module GBTiles
             output_stream.write(render_s)
 
             if output_stream.is_a? File then
-              header_path = "#{File.basename(output_stream.path, ".s")}.h"
+              header_filename = "#{File.basename(output_stream.path, ".s")}.h"
+              header_path = "#{File.dirname(File.expand_path(output_stream.path))}/#{header_filename}"
               header_stream = File.open(header_path, "w")
               header_stream.write(render_h)
               header_stream.close

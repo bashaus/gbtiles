@@ -1,7 +1,5 @@
 # GBTiles
 
-Version 0.0.1
-
 Converts `.GBR` files created with 
 [Harry Mulder's Tile Designer (GBTD)](http://www.devrs.com/gb/hmgd/gbtd.html)
 and `.GBM` files created with 

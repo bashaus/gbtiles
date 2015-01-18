@@ -8,8 +8,9 @@
  * <%= tile_set.producers.first.info %>
  */
 
-// Helper: The bank the tiles were saved as
+// Helpers
 #define <%= tile_export.label_name %>Bank <%= tile_export.bank %>
+#define <%= tile_export.label_name %>Count <%= tile_export.upto - tile_export.from + 1 %>
 
-// Extern: A placeholder for the data
+// Extern
 extern unsigned char <%= tile_export.label_name %>[];

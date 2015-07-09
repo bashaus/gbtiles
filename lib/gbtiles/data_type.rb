@@ -1,24 +1,26 @@
 module GBTiles
   module DataType
     def self.string(src, length = nil)
+      if src.nil? then
+        return nil
+      end
+
       if !length.nil? then
         string = src.slice(0, length)
       else
         string = src
       end
 
-      if !string.nil? then
-        string = string.split(/\0/).first
-      end
-
-      if !string.nil?
-        string = string.unpack("A*")[0]
-      end
-
+      string = string.split(/\0/).first
+      string = string.unpack("A*")[0]
       string
     end
 
     def self.string!(src, length = nil)
+      if src.nil? then
+        return nil
+      end
+
       if !length.nil? then
         string = src.slice!(0, length)
       else 

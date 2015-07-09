@@ -1,2 +1,3 @@
-gbtiles-*.gem
-Gemfile.lock
+/gbtiles-*.gem
+/Gemfile.lock
+/coverage

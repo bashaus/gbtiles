@@ -3,7 +3,7 @@ require File.join([File.dirname(__FILE__),"lib","gbtiles","version.rb"])
 spec = Gem::Specification.new do |s| 
   s.name        = "gbtiles"
   s.version     = GBTiles::VERSION
-  s.date        = "2014-12-31"
+  s.date        = Time.now.getutc
   s.authors     = ["Bashkim Isai"]
   s.license     = "MIT"
   s.homepage    = "http://github.com/bashaus/gbtiles"
@@ -19,4 +19,7 @@ spec = Gem::Specification.new do |s|
   s.executables << "gbm"
 
   s.add_runtime_dependency("gli", "2.12.2")
+
+  s.add_development_dependency("rspec", "3.1.0")
+  s.add_development_dependency("simplecov", "0.10.0")
 end

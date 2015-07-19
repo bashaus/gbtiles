@@ -1,5 +1,7 @@
 # GBTiles
 
+[![wercker status](https://app.wercker.com/status/c42dc696662599ce8eb787410c3b8780/s "wercker status")](https://app.wercker.com/project/bykey/c42dc696662599ce8eb787410c3b8780) [![Code Climate](https://codeclimate.com/github/bashaus/gbtiles/badges/gpa.svg)](https://codeclimate.com/github/bashaus/gbtiles) [![Test Coverage](https://codeclimate.com/github/bashaus/gbtiles/badges/coverage.svg)](https://codeclimate.com/github/bashaus/gbtiles/coverage)
+
 Converts `.GBR` files created with 
 [Harry Mulder's Tile Designer (GBTD)](http://www.devrs.com/gb/hmgd/gbtd.html)
 and `.GBM` files created with 

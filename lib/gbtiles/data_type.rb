@@ -11,8 +11,14 @@ module GBTiles
         string = src
       end
 
-      string = string.split(/\0/).first
-      string = string.unpack("A*")[0]
+      if !string.nil? then
+        string = string.split(/\0/).first
+      end
+
+      if !string.nil? then
+        string = string.unpack("A*")[0]
+      end
+
       string
     end
 

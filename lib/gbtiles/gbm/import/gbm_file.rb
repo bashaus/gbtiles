@@ -20,14 +20,14 @@ module GBTiles
 
           # Check to see if this is a valid file type
           if (file.read(3) != "GBO") then
-            raise "Invalid file, header does not start with GBO"
+            raise IOError, "Not a valid file (expected: GBO)"
           end
 
           # Version number
           import.version = file.read(1)
 
           if import.version != "1" then
-            raise "Invalid file, can only import version number 1"
+            raise IOError, "Cannot import version #{import.version}"
           end
 
           # For each object

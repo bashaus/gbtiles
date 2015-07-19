@@ -16,7 +16,7 @@ module GBTiles
 
           # Check to see if this is a valid file type
           if (file.read(3) != "GBO") then
-            raise "Invalid file, header does not start with GBO"
+            raise IOError, "Not a valid file (expected: GBO)"
           end
 
           # Version number

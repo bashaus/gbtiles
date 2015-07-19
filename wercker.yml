@@ -1,0 +1,8 @@
+box: ruby:2.0.0
+
+build:
+    steps:
+        - bundle-install
+        - script:
+            name: rspec
+            code: bundle exec rspec

@@ -1,3 +1,18 @@
+require "gbtiles/gbr/tile_set/tile_set"
+require "gbtiles/gbr/tile_set/object"
+require "gbtiles/gbr/tile_set/object_type"
+require "gbtiles/gbr/tile_set/split_order"
+require "gbtiles/gbr/tile_set/color_set"
+
+require "gbtiles/gbr/tile_set/objects/palettes"
+require "gbtiles/gbr/tile_set/objects/producer"
+require "gbtiles/gbr/tile_set/objects/tile_data"
+require "gbtiles/gbr/tile_set/objects/tile_export"
+require "gbtiles/gbr/tile_set/objects/tile_import"
+require "gbtiles/gbr/tile_set/objects/tile_pal"
+require "gbtiles/gbr/tile_set/objects/tile_settings"
+require "gbtiles/gbr/tile_set/objects/unknown"
+
 module GBTiles
   module GBR
     module Import
@@ -6,11 +21,11 @@ module GBTiles
         attr_accessor :version
         attr_accessor :tile_set
 
-        def initialize()
+        def initialize
           @tile_set = GBTiles::GBR::TileSet::TileSet.new
         end
 
-        def self.open(file)
+        def self.open file
           import = GBTiles::GBR::Import::GBRFile.new
 
           # Check to see if this is a valid file type
@@ -28,27 +43,27 @@ module GBTiles
             object_len  = GBTiles::DataType.long(file.read(4))
             object_data = file.read(object_len)
 
-            case object_type
-            when GBTiles::GBR::TileSet::ObjectType::PRODUCER
-              object = GBTiles::GBR::TileSet::Objects::Producer.initFromBitString object_data
+            case GBTiles::GBR::TileSet::OBJECT_TYPE.key(object_type)
+            when :producer
+              object = GBTiles::GBR::TileSet::Objects::Producer.initFromBitString(object_data)
 
-            when GBTiles::GBR::TileSet::ObjectType::TILE_DATA
-              object = GBTiles::GBR::TileSet::Objects::TileData.initFromBitString object_data
+            when :tile_data
+              object = GBTiles::GBR::TileSet::Objects::TileData.initFromBitString(object_data)
 
-            when GBTiles::GBR::TileSet::ObjectType::TILE_SETTINGS
-              object = GBTiles::GBR::TileSet::Objects::TileSettings.initFromBitString object_data
+            when :tile_settings
+              object = GBTiles::GBR::TileSet::Objects::TileSettings.initFromBitString(object_data)
 
-            when GBTiles::GBR::TileSet::ObjectType::TILE_EXPORT
-              object = GBTiles::GBR::TileSet::Objects::TileExport.initFromBitString object_data
+            when :tile_export
+              object = GBTiles::GBR::TileSet::Objects::TileExport.initFromBitString(object_data)
 
-            when GBTiles::GBR::TileSet::ObjectType::TILE_IMPORT
-              object = GBTiles::GBR::TileSet::Objects::TileImport.initFromBitString object_data
+            when :tile_import
+              object = GBTiles::GBR::TileSet::Objects::TileImport.initFromBitString(object_data)
 
-            when GBTiles::GBR::TileSet::ObjectType::PALETTES
-              object = GBTiles::GBR::TileSet::Objects::Palettes.initFromBitString object_data
+            when :palettes
+              object = GBTiles::GBR::TileSet::Objects::Palettes.initFromBitString(object_data)
 
-            when GBTiles::GBR::TileSet::ObjectType::TILE_PAL
-              object = GBTiles::GBR::TileSet::Objects::TilePal.initFromBitString object_data
+            when :tile_pal
+              object = GBTiles::GBR::TileSet::Objects::TilePal.initFromBitString(object_data)
 
             else
               object = GBTiles::GBR::TileSet::Objects::Unknown.new object_type

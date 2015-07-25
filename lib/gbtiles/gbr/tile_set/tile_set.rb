@@ -9,7 +9,7 @@ module GBTiles
           @objects = []
         end
 
-        def producers
+        def producer
           @objects.select{ |a|
             a.is_a? GBTiles::GBR::TileSet::Objects::Producer
           }

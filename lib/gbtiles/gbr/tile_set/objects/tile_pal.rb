@@ -11,7 +11,7 @@ module GBTiles
           attr_accessor :sgb_color_set
 
           def initialize
-            super GBTiles::GBR::TileSet::ObjectType::TILE_PAL
+            super GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_pal]
           end
 
           def self.initFromBitString src

@@ -15,7 +15,7 @@ module GBTiles
           attr_accessor :binary_file_type
 
           def initialize
-            super GBTiles::GBR::TileSet::ObjectType::TILE_IMPORT
+            super GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_import]
           end
 
           def self.initFromBitString src

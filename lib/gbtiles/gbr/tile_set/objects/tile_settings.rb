@@ -17,7 +17,7 @@ module GBTiles
           attr_accessor :auto_update
 
           def initialize
-            super GBTiles::GBR::TileSet::ObjectType::TILE_SETTINGS
+            super GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_settings]
           end
 
           def self.initFromBitString src

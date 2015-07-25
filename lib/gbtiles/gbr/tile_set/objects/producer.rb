@@ -9,7 +9,7 @@ module GBTiles
           attr_accessor :info
 
           def initialize
-            super GBTiles::GBR::TileSet::ObjectType::PRODUCER
+            super GBTiles::GBR::TileSet::OBJECT_TYPE[:producer]
           end
 
           def self.initFromBitString src

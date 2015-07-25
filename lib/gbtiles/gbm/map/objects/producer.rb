@@ -12,7 +12,7 @@ module GBTiles
             super GBTiles::GBM::Map::ObjectType::PRODUCER
           end
 
-          def self.initFromBitString(src)
+          def self.initFromBitString src
             object = GBTiles::GBM::Map::Objects::Producer.new
 
             object.name     = GBTiles::DataType.string!(src, 128)

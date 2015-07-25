@@ -8,11 +8,11 @@ module GBTiles
         attr_accessor :version
         attr_accessor :map_set
 
-        def initialize()
+        def initialize
           @map_set = GBTiles::GBM::Map::MapSet.new
         end
 
-        def self.open(file)
+        def self.open file
           import = GBTiles::GBM::Import::GBMFile.new
 
           # Check to see if this is a valid file type

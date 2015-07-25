@@ -27,7 +27,7 @@ module GBTiles
           attr_accessor :sel_tab
 
           def initialize
-            super GBTiles::GBR::TileSet::ObjectType::TILE_EXPORT
+            super GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_export]
           end
 
           def self.initFromBitString src

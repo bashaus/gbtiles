@@ -1,13 +1,13 @@
 module GBTiles
   module GBR
     module TileSet
-      module SGBPalettes
-        NONE                = 0
-        CONSTANT_PER_ENTRY  = 1
-        2_BITS_PER_ENTRY    = 2
-        4_BITS_PER_ENTRY    = 3
-        1_BYTE_PER_ENTRY    = 4
-      end
+      SGB_PALETTES = {
+        :none                 => 0,
+        :constant_per_entry   => 1,
+        :per_entry_2_bits     => 2, # 2_bits_per_entry
+        :per_entry_4_bits     => 3, # 4_bits_per_entry
+        :per_entry_1_byte     => 4  # 1_byte_per_entry
+      }
     end
   end
 end

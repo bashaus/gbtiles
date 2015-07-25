@@ -12,7 +12,7 @@ module GBTiles
           attr_accessor :data
 
           def initialize
-            super GBTiles::GBR::TileSet::ObjectType::TILE_DATA
+            super GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_data]
           end
 
           def self.initFromBitString src
@@ -28,7 +28,7 @@ module GBTiles
             object
           end
 
-          def render_tile(tile_index)
+          def render_tile tile_index
             tile = []
 
             tile_data = @data.slice(

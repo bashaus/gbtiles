@@ -1,13 +1,13 @@
 module GBTiles
   module GBR
     module TileSet
-      module SplitOrder
-        LRTB = 0
-        HORIZONTAL = 0
+      SPLIT_ORDER = {
+        :lrtb       => 0,
+        :horizontal => 0,
 
-        TBLR = 1
-        VERTICAL = 1
-      end
+        :tblr       => 1,
+        :vertical   => 1
+      }
     end
   end
 end

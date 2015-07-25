@@ -56,6 +56,12 @@ module GBTiles
             a.object_type == GBTiles::GBR::TileSet::OBJECT_TYPE[:deleted]
           }
         end
+
+        def unknown
+          @objects.select{ |a|
+            GBTiles::GBR::TileSet::OBJECT_TYPE.key(a.object_type).nil?
+          }
+        end
       end
     end
   end

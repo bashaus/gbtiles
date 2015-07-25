@@ -8,7 +8,6 @@ module GBTiles
           include ERB::Util
 
           attr_accessor :tile_set
-          @tile_set
 
           def initialize
           end

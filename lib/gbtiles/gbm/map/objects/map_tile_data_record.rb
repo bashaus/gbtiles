@@ -5,19 +5,10 @@ module GBTiles
         class MapTileDataRecord
 
           attr_accessor :tile_number
-          @tile_number
-
           attr_accessor :gbc_palette
-          @gbc_palette
-
           attr_accessor :sgb_palette
-          @sgb_palette
-
           attr_accessor :flipped_horizontally
-          @flipped_horizontally
-
           attr_accessor :flipped_vertically
-          @flipped_vertically
 
           def initialize
           end

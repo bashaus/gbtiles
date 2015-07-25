@@ -4,7 +4,6 @@ module GBTiles
       class MapSet
 
         attr_accessor :objects
-        @objects
 
         def initialize
           @objects = []

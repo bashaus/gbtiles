@@ -5,7 +5,6 @@ module GBTiles
         class Unknown < GBTiles::GBR::TileSet::Object
 
           attr_accessor :object_data
-          @object_data
 
         end
       end

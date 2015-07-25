@@ -5,46 +5,19 @@ module GBTiles
         class MapExportSettings < GBTiles::GBM::Map::Object
 
           attr_accessor :file_name
-          @file_name
-
           attr_accessor :file_type
-          @file_type
-
           attr_accessor :section_name
-          @section_name
-
           attr_accessor :label_name
-          @label_name
-
           attr_accessor :bank
-          @bank
-
           attr_accessor :plane_count
-          @plane_count
-
           attr_accessor :plane_order
-          @plane_order
-
           attr_accessor :map_layout
-          @map_layout
-
           attr_accessor :split
-          @split
-
           attr_accessor :split_size
-          @split_size
-
           attr_accessor :split_bank
-          @split_bank
-
           attr_accessor :sel_tab
-          @sel_tab
-
           attr_accessor :prop_count
-          @prop_count
-
           attr_accessor :tile_offset
-          @tile_offset
 
           def initialize
             super GBTiles::GBM::Map::ObjectType::MAP_EXPORT_SETTINGS

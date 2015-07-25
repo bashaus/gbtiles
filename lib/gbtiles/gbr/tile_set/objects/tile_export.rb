@@ -5,67 +5,26 @@ module GBTiles
         class TileExport < GBTiles::GBR::TileSet::Object
 
           attr_accessor :tile_id
-          @tile_id
-
           attr_accessor :file_name
-          @file_name
-
           attr_accessor :file_type
-          @file_type
-
           attr_accessor :section_name
-          @section_name
-
           attr_accessor :label_name
-          @label_name
-
           attr_accessor :bank
-          @bank
-
           attr_accessor :tile_array
-          @tile_array
-
           attr_accessor :format
-          @format
-
           attr_accessor :counter
-          @counter
-
           attr_accessor :from
-          @from
-
           attr_accessor :upto
-          @upto
-
           attr_accessor :compression
-          @compression
-
           attr_accessor :include_colors
-          @include_colors
-
           attr_accessor :sgb_palettes
-          @sgb_palettes
-
           attr_accessor :gbc_palettes
-          @gbc_palettes
-
           attr_accessor :make_meta_tiles
-          @make_meta_tiles
-
           attr_accessor :meta_offset
-          @meta_offset
-
           attr_accessor :meta_counter
-          @meta_counter
-
           attr_accessor :split
-          @split
-
           attr_accessor :block_size
-          @block_size
-
           attr_accessor :sel_tab
-          @sel_tab
 
           def initialize
             super GBTiles::GBR::TileSet::ObjectType::TILE_EXPORT

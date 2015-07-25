@@ -5,19 +5,10 @@ module GBTiles
         class TilePal < GBTiles::GBR::TileSet::Object
 
           attr_accessor :id
-          @id
-
           attr_accessor :count
-          @count
-
           attr_accessor :color_set
-          @color_set
-
           attr_accessor :sgb_count
-          @sgb_count
-
           attr_accessor :sgb_color_set
-          @sgb_color_set
 
           def initialize
             super GBTiles::GBR::TileSet::ObjectType::TILE_PAL

@@ -5,13 +5,8 @@ module GBTiles
         class Producer < GBTiles::GBR::TileSet::Object
 
           attr_accessor :name
-          @name
-
           attr_accessor :version
-          @version
-
           attr_accessor :info
-          @info
 
           def initialize
             super GBTiles::GBR::TileSet::ObjectType::PRODUCER

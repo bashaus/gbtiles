@@ -2,10 +2,9 @@ module GBTiles
   module GBR
     module Import
       class GBRFile
-        attr_accessor :version, :tile_set
 
-        @version
-        @tile_set
+        attr_accessor :version
+        attr_accessor :tile_set
 
         def initialize()
           @tile_set = GBTiles::GBR::TileSet::TileSet.new

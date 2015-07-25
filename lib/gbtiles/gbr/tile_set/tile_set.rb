@@ -4,7 +4,6 @@ module GBTiles
       class TileSet
 
         attr_accessor :objects
-        @objects
 
         def initialize
           @objects = []

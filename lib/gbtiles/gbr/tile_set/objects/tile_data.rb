@@ -5,22 +5,11 @@ module GBTiles
         class TileData < GBTiles::GBR::TileSet::Object
 
           attr_accessor :name
-          @name
-
           attr_accessor :width
-          @width
-
           attr_accessor :height
-          @height
-
           attr_accessor :count
-          @count
-
           attr_accessor :color_set
-          @color_set
-
           attr_accessor :data
-          @data
 
           def initialize
             super GBTiles::GBR::TileSet::ObjectType::TILE_DATA

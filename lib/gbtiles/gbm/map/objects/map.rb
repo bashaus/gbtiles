@@ -5,25 +5,12 @@ module GBTiles
         class Map < GBTiles::GBM::Map::Object
 
           attr_accessor :name
-          @name
-
           attr_accessor :width
-          @width
-
           attr_accessor :height
-          @height
-
           attr_accessor :prop_count
-          @prop_count
-
           attr_accessor :tile_file
-          @tile_file
-
           attr_accessor :tile_count
-          @tile_count
-
           attr_accessor :prop_color_count
-          @prop_color_count
 
           def initialize
             super GBTiles::GBM::Map::ObjectType::MAP

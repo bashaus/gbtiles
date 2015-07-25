@@ -5,19 +5,10 @@ module GBTiles
         class Palettes < GBTiles::GBR::TileSet::Object
 
           attr_accessor :id
-          @id
-
           attr_accessor :count
-          @count
-
           attr_accessor :colors
-          @colors
-
           attr_accessor :sgb_count
-          @sgb_count
-
           attr_accessor :sgb_colors
-          @sgb_colors
 
           def initialize
             super GBTiles::GBR::TileSet::ObjectType::PALETTES

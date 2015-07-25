@@ -8,7 +8,6 @@ module GBTiles
           include ERB::Util
 
           attr_accessor :map_set
-          @map_set
 
           def initialize
           end

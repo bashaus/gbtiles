@@ -5,7 +5,6 @@ module GBTiles
         class MapTileData < GBTiles::GBM::Map::Object
 
           attr_accessor :records
-          @records
 
           def initialize
             super GBTiles::GBM::Map::ObjectType::MAP_TILE_DATA

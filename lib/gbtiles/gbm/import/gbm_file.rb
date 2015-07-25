@@ -6,10 +6,7 @@ module GBTiles
         OBJECT_MARKER = "HPJMTL"
 
         attr_accessor :version
-        @version
-
         attr_accessor :map_set
-        @map_set
 
         def initialize()
           @map_set = GBTiles::GBM::Map::MapSet.new

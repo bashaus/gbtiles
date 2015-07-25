@@ -5,13 +5,8 @@ module GBTiles
         class Producer < GBTiles::GBM::Map::Object
 
           attr_accessor :name
-          @name
-
           attr_accessor :version
-          @version
-          
           attr_accessor :info
-          @info
 
           def initialize
             super GBTiles::GBM::Map::ObjectType::PRODUCER

@@ -50,6 +50,12 @@ module GBTiles
             a.object_type == GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_pal]
           }
         end
+
+        def deleted
+          @objects.select{ |a|
+            a.object_type == GBTiles::GBR::TileSet::OBJECT_TYPE[:deleted]
+          }
+        end
       end
     end
   end

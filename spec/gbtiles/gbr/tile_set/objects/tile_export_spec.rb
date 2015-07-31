@@ -10,7 +10,7 @@ RSpec.describe GBTiles::GBR::TileSet::Objects::TileExport, "#initFromBitString" 
     expect(@tile_export.object_type).to eql GBTiles::GBR::TileSet::OBJECT_TYPE[:tile_export]
   end
 
-  it "reads the tile_id" do
+  it "reads the tile id" do
     expect(@tile_export.tile_id).to eql 1
   end
 

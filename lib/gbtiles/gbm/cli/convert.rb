@@ -1,20 +1,5 @@
-require "gbtiles/data_type"
-
+require "gbtiles/helpers/data_type"
 require "gbtiles/gbm/import/gbm_file"
-
-require "gbtiles/gbm/map/map_set"
-
-require "gbtiles/gbm/map/object"
-require "gbtiles/gbm/map/object_type"
-
-require "gbtiles/gbm/map/objects/producer"
-require "gbtiles/gbm/map/objects/map"
-require "gbtiles/gbm/map/objects/map_tile_data"
-require "gbtiles/gbm/map/objects/map_tile_data_record"
-require "gbtiles/gbm/map/objects/map_settings"
-require "gbtiles/gbm/map/objects/map_export_settings"
-require "gbtiles/gbm/map/objects/unknown"
-
 require "gbtiles/gbm/export/asm/asm"
 
 desc "Convert a file from GBM format"

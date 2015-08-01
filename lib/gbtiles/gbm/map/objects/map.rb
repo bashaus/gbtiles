@@ -13,7 +13,7 @@ module GBTiles
           attr_accessor :prop_color_count
 
           def initialize
-            super GBTiles::GBM::Map::ObjectType::MAP
+            super GBTiles::GBM::Map::OBJECT_TYPE[:map]
           end
 
           def self.initFromBitString src

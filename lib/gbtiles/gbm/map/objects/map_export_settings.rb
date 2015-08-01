@@ -20,7 +20,7 @@ module GBTiles
           attr_accessor :tile_offset
 
           def initialize
-            super GBTiles::GBM::Map::ObjectType::MAP_EXPORT_SETTINGS
+            super GBTiles::GBM::Map::OBJECT_TYPE[:map_export_settings]
           end
 
           def self.initFromBitString src

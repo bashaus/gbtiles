@@ -19,7 +19,7 @@ module GBTiles
           attr_accessor :block_fill_height
 
           def initialize
-            super GBTiles::GBM::Map::ObjectType::MAP_SETTINGS
+            super GBTiles::GBM::Map::OBJECT_TYPE[:map_settings]
           end
 
           def self.initFromBitString src

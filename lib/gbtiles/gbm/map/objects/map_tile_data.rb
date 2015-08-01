@@ -7,7 +7,7 @@ module GBTiles
           attr_accessor :records
 
           def initialize
-            super GBTiles::GBM::Map::ObjectType::MAP_TILE_DATA
+            super GBTiles::GBM::Map::OBJECT_TYPE[:map_tile_data]
 
             @records = []
           end

@@ -1,4 +1,4 @@
-require "gbtiles/data_type"
+require "gbtiles/helpers/data_type"
 
 RSpec.describe GBTiles::DataType, "#string" do
   context "of undefined length" do

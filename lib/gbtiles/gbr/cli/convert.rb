@@ -1,7 +1,5 @@
-require "gbtiles/data_type"
-
+require "gbtiles/helpers/data_type"
 require "gbtiles/gbr/import/gbr_file"
-
 require "gbtiles/gbr/export/asm/asm"
 
 desc "Convert a file from GBR format"

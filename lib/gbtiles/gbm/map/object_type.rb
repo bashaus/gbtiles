@@ -1,14 +1,14 @@
 module GBTiles
   module GBM
     module Map
-      module ObjectType
-        PRODUCER            = 0x01
-        MAP                 = 0x02
-        MAP_TILE_DATA       = 0x03
-        MAP_SETTINGS        = 0x07
-        MAP_EXPORT_SETTINGS = 0x09
-        DELETED             = 0xFF
-      end
+      OBJECT_TYPE = {
+        :producer            => 0x01,
+        :map                 => 0x02,
+        :map_tile_data       => 0x03,
+        :map_settings        => 0x07,
+        :map_export_settings => 0x09,
+        :deleted             => 0xFF
+      }
     end
   end
 end

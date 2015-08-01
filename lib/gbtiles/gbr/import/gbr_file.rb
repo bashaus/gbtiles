@@ -1,3 +1,5 @@
+require "gbtiles/helpers/fixnum"
+
 require "gbtiles/gbr/tile_set/tile_set"
 require "gbtiles/gbr/tile_set/object"
 require "gbtiles/gbr/tile_set/object_type"

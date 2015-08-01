@@ -1,3 +1,17 @@
+require "gbtiles/helpers/fixnum"
+
+require "gbtiles/gbm/map/map_set"
+require "gbtiles/gbm/map/object"
+require "gbtiles/gbm/map/object_type"
+
+require "gbtiles/gbm/map/objects/producer"
+require "gbtiles/gbm/map/objects/map"
+require "gbtiles/gbm/map/objects/map_tile_data"
+require "gbtiles/gbm/map/objects/map_tile_data_record"
+require "gbtiles/gbm/map/objects/map_settings"
+require "gbtiles/gbm/map/objects/map_export_settings"
+require "gbtiles/gbm/map/objects/unknown"
+
 module GBTiles
   module GBM
     module Import
@@ -43,20 +57,20 @@ module GBTiles
             object_len  = GBTiles::DataType.long(file.read(4))
             object_data = file.read(object_len)
 
-            case object_type
-            when GBTiles::GBM::Map::ObjectType::PRODUCER
+            case GBTiles::GBM::Map::OBJECT_TYPE.key(object_type)
+            when :producer
               object = GBTiles::GBM::Map::Objects::Producer.initFromBitString object_data
 
-            when GBTiles::GBM::Map::ObjectType::MAP
+            when :map
               object = GBTiles::GBM::Map::Objects::Map.initFromBitString object_data
 
-            when GBTiles::GBM::Map::ObjectType::MAP_TILE_DATA
+            when :map_tile_data
               object = GBTiles::GBM::Map::Objects::MapTileData.initFromBitString object_data
 
-            when GBTiles::GBM::Map::ObjectType::MAP_SETTINGS
+            when :map_settings
               object = GBTiles::GBM::Map::Objects::MapSettings.initFromBitString object_data
 
-            when GBTiles::GBM::Map::ObjectType::MAP_EXPORT_SETTINGS
+            when :map_export_settings
               object = GBTiles::GBM::Map::Objects::MapExportSettings.initFromBitString object_data
 
             else

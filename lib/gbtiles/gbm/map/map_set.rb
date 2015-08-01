@@ -9,25 +9,17 @@ module GBTiles
           @objects = []
         end
 
-        def maps master_id = nil
+        def producer master_id = nil
           @objects.select{ |a|
-            a.is_a? GBTiles::GBM::Map::Objects::Map
+            a.object_type == GBTiles::GBM::Map::OBJECT_TYPE[:producer]
           }.select{ |a|
             master_id.nil? || a.object_id = master_id
           }
         end
 
-        def map_export_settings master_id = nil
+        def map master_id = nil
           @objects.select{ |a|
-            a.is_a? GBTiles::GBM::Map::Objects::MapExportSettings
-          }.select{ |a|
-            master_id.nil? || a.object_id = master_id
-          }
-        end
-
-        def map_settings master_id = nil
-          @objects.select{ |a|
-            a.is_a? GBTiles::GBM::Map::Objects::MapSettings
+            a.object_type == GBTiles::GBM::Map::OBJECT_TYPE[:map]
           }.select{ |a|
             master_id.nil? || a.object_id = master_id
           }
@@ -35,17 +27,37 @@ module GBTiles
 
         def map_tile_data master_id = nil
           @objects.select{ |a|
-            a.is_a? GBTiles::GBM::Map::Objects::MapTileData
+            a.object_type == GBTiles::GBM::Map::OBJECT_TYPE[:map_tile_data]
           }.select{ |a|
             master_id.nil? || a.object_id = master_id
           }
         end
 
-        def producers master_id = nil
+        def map_settings master_id = nil
           @objects.select{ |a|
-            a.is_a? GBTiles::GBM::Map::Objects::Producer
+            a.object_type == GBTiles::GBM::Map::OBJECT_TYPE[:map_settings]
           }.select{ |a|
             master_id.nil? || a.object_id = master_id
+          }
+        end
+
+        def map_export_settings master_id = nil
+          @objects.select{ |a|
+            a.object_type == GBTiles::GBM::Map::OBJECT_TYPE[:map_export_settings]
+          }.select{ |a|
+            master_id.nil? || a.object_id = master_id
+          }
+        end
+
+        def deleted
+          @objects.select{ |a|
+            a.object_type == GBTiles::GBM::Map::OBJECT_TYPE[:deleted]
+          }
+        end
+
+        def unknown
+          @objects.select{ |a|
+            GBTiles::GBM::Map::OBJECT_TYPE.key(a.object_type).nil?
           }
         end
       end

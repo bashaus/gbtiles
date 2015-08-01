@@ -1,11 +1,8 @@
 #!/usr/bin/env ruby
 require "gli"
-
 include GLI::App
 
 require "gbtiles/version"
-require "gbtiles/helpers/fixnum"
-
 require "gbtiles/gbm/cli/convert"
 
 program_desc "Converts .GBM files to different formats for the Game Boy"

@@ -25,9 +25,40 @@ RSpec.describe GBTiles::GBR::Import::GBRFile, "#open" do
         @gbr = GBTiles::GBR::Import::GBRFile.open @file
       end
 
-      it "has one producer" do
+      it "has one producer object" do
         expect(@gbr.tile_set.producer.count).to eql 1
-        producer = @gbr.tile_set.producer.first
+      end
+
+      it "has one tile_data object" do
+        expect(@gbr.tile_set.tile_data.count).to eql 1
+      end
+
+      it "has one tile_settings object" do
+        expect(@gbr.tile_set.tile_settings.count).to eql 1
+      end
+
+      it "has one tile_export object" do
+        expect(@gbr.tile_set.tile_export.count).to eql 1
+      end
+
+      it "has one tile_import object" do
+        expect(@gbr.tile_set.tile_import.count).to eql 1
+      end
+
+      it "has one palette object" do
+        expect(@gbr.tile_set.palettes.count).to eql 1
+      end
+
+      it "has one tile_pal object" do
+        expect(@gbr.tile_set.tile_pal.count).to eql 1
+      end
+
+      it "has no deleted objects" do
+        expect(@gbr.tile_set.deleted.count).to eql 0
+      end
+
+      it "has no unknown objects" do
+        expect(@gbr.tile_set.unknown.count).to eql 0
       end
     end
   end

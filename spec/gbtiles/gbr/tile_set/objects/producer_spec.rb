@@ -2,7 +2,7 @@ require "gbtiles/gbr/tile_set/objects/producer"
 
 RSpec.describe GBTiles::GBR::TileSet::Objects::Producer, "#initFromBitString" do
   before do
-    @file = File.open "spec/fixtures/producer/partial.gbr", "rb"
+    @file = File.open "spec/fixtures/gbr/producer/partial.gbr", "rb"
     @producer = GBTiles::GBR::TileSet::Objects::Producer.initFromBitString @file.read
   end
 

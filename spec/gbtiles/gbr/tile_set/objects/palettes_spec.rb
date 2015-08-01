@@ -2,7 +2,7 @@ require "gbtiles/gbr/tile_set/objects/palettes"
 
 RSpec.describe GBTiles::GBR::TileSet::Objects::Palettes, "#initFromBitString" do
   before do
-    @file = File.open "spec/fixtures/palettes/partial.gbr", "rb"
+    @file = File.open "spec/fixtures/gbr/palettes/partial.gbr", "rb"
     @palettes = GBTiles::GBR::TileSet::Objects::Palettes.initFromBitString @file.read
   end
 

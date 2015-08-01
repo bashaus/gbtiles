@@ -2,7 +2,7 @@ require "gbtiles/gbr/tile_set/objects/tile_settings"
 
 RSpec.describe GBTiles::GBR::TileSet::Objects::TileSettings, "#initFromBitString" do
   before do
-    file = File.open "spec/fixtures/tile_settings/partial.gbr", "rb"
+    file = File.open "spec/fixtures/gbr/tile_settings/partial.gbr", "rb"
     @tile_settings = GBTiles::GBR::TileSet::Objects::TileSettings.initFromBitString file.read
   end
 

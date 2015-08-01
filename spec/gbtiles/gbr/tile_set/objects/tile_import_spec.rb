@@ -2,7 +2,7 @@ require "gbtiles/gbr/tile_set/objects/tile_import"
 
 RSpec.describe GBTiles::GBR::TileSet::Objects::TileImport, "#initFromBitString" do
   before do
-    file = File.open "spec/fixtures/tile_import/partial.gbr", "rb"
+    file = File.open "spec/fixtures/gbr/tile_import/partial.gbr", "rb"
     @tile_import = GBTiles::GBR::TileSet::Objects::TileImport.initFromBitString file.read
   end
 

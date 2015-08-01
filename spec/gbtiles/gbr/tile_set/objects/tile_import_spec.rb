@@ -15,7 +15,7 @@ RSpec.describe GBTiles::GBR::TileSet::Objects::TileImport, "#initFromBitString" 
   end
 
   it "reads the file name" do
-    expect(@tile_import.file_name).to eql nil
+    expect(@tile_import.file_name).to be_nil
   end
 
   it "reads the file type" do

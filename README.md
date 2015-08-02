@@ -55,6 +55,6 @@ output file `.s` will default to `STDOUT`.
 
 ## Contributors
 
-* @bashaus -- [Bashkim Isai](http://www.bashkim.com.au/)
+* @bashaus -- [Bashkim Isai](http://www.bashkim.com/)
 
 If you fork this project and create a pull request add your GitHub username, your full name and website to the end of list above.

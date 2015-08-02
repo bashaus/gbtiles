@@ -34,12 +34,24 @@ a C file `*.h` for convenience.
 
     gbr convert --output "sample.s" sample.gbr
 
+Omitting the input file `.gbm` file will default to `STDIN`. Omitting the
+output file `.s` will default to `STDOUT`.
+
 ### GBM (GBMB files)
 
 Converts a Map Builder file `*.gbm` to an ASM file `*.s` and generates 
 a C file `*.h` for convenience.
 
     gbm convert --output "sample.s" sample.gbm
+
+You can also specify the target layer of a map specifying a layer flag. 
+Acceptable values: `bkg` for the background, `win` for the window overlay or 
+`sprite` for sprites. Default value: `bkg`.
+
+    gbm convert --output "sample.s" --layer=bkg sample.gbm
+
+Omitting the input file `.gbm` file will default to `STDIN`. Omitting the
+output file `.s` will default to `STDOUT`.
 
 ## Contributors
 

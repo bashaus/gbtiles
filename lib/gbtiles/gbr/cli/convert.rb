@@ -6,7 +6,7 @@ desc "Convert a file from GBR format"
 arg_name "input"
 command :convert do |c|
 
-  c.desc "Output filename (*.s)"
+  c.desc "Output filename [*.s]"
   c.flag :output
 
   c.action do |global_options,options,args|

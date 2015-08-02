@@ -6,8 +6,13 @@ desc "Convert a file from GBM format"
 arg_name "input"
 command :convert do |c|
 
-  c.desc "Output filename (*.s)"
+  c.desc "Output filename [*.s]"
   c.flag :output
+
+  c.desc "Layer type of the map [bkg, win, sprite]"
+  c.flag :layer,
+    :must_match => [:bkg, :win, :sprite],
+    :default_value => :bkg
 
   c.action do |global_options,options,args|
     # Prepare input file
@@ -35,6 +40,7 @@ command :convert do |c|
     # Do export
     export = GBTiles::GBM::Export::ASM::ASM.new
     export.map_set = import.map_set
+    export.layer = options[:layer]
     export.write(output_file)
     output_file.close
   end

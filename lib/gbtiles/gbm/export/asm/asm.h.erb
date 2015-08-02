@@ -4,11 +4,11 @@
  * GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBM
  *
  * .GBM created with
- * <%= map_set.producers.first.name %> (v<%= map_set.producers.first.version %>)
- * <%= map_set.producers.first.info %>
+ * <%= map_set.producer.first.name %> (v<%= map_set.producer.first.version %>)
+ * <%= map_set.producer.first.info %>
  */
 
-<% map_set.maps.each do |map| -%>
+<% map_set.map.each do |map| -%>
 // Helper: Map dimensions
 #define <%= map_export_settings.label_name %>Width <%= map.width %>
 #define <%= map_export_settings.label_name %>Height <%= map.height %>

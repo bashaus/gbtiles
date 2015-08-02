@@ -1,3 +1,5 @@
+require "gbtiles/gbm/layer"
+
 require "erb"
 
 module GBTiles
@@ -8,6 +10,7 @@ module GBTiles
           include ERB::Util
 
           attr_accessor :map_set
+          attr_accessor :layer
 
           def initialize
           end
@@ -15,6 +18,10 @@ module GBTiles
           def prerender
             if @map_set.nil? then
               raise "Missing required map"
+            end
+
+            if @layer.nil? then
+              raise "Missing required layer (bkg, win, sprite)"
             end
           end
 

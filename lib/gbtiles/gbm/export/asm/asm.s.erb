@@ -3,12 +3,12 @@
 ; GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBM
 ;
 ; .GBM created with
-; <%= map_set.producers.first.name %> (v<%= map_set.producers.first.version %>)
-; <%= map_set.producers.first.info %>
+; <%= map_set.producer.first.name %> (v<%= map_set.producer.first.version %>)
+; <%= map_set.producer.first.info %>
 
 .area _CODE_<%= map_export_settings.bank -%>
 
-<% map_set.maps.each do |map| -%>
+<% map_set.map.each do |map| -%>
 <% map_tile_data = map_set.map_tile_data(map.master_id).first -%>
 
 ; Map <%= "(#{map.name})" unless map.name.nil? %>
@@ -21,7 +21,7 @@ _<%= map_export_settings.label_name %>:
 <% row_tile_data = map_tile_data.row(row, 16) -%>
 <% if !row_tile_data.nil? -%>
 .db <%= row_tile_data
-    .map {|x| sprintf("0x%02x", x.tile_number) }
+    .map {|x| sprintf("0x%02x", x.tile_number + GBTiles::GBM::LAYER[layer]) }
     .join(',')
 %>
 <% end -%>

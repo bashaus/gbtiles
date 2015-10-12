@@ -1,4 +1,10 @@
 language: ruby
+
 rvm:
  - "2.0.0"
+
+addons:
+  code_climate:
+    repo_token: 55ac17c969568018f9001220
+
 script: bundle exec rspec

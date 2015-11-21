@@ -77,5 +77,16 @@ module GBTiles
     def self.long! src
       self.long(src.slice!(0, 4))
     end
+
+    # BWORD
+    # BIG ENDIAN
+    # 2 BYTES
+    def self.bword src
+      src.slice(0, 2).unpack("n*")[0]
+    end
+
+    def self.bword! src
+      self.bword(src.slice!(0, 2))
+    end
   end
 end

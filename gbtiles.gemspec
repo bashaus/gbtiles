@@ -8,8 +8,11 @@ spec = Gem::Specification.new do |s|
   s.license     = "MIT"
   s.homepage    = "http://github.com/bashaus/gbtiles"
   s.platform    = Gem::Platform::RUBY
-  s.summary     = "Converts .GBR and .GBM files to different Game Boy formats"
-  s.description = "Allows files created by Harry Mulder's Game Boy Map Builder and Game Boy Tile Designer to be converted in to different file formats for use in Game Boy game development (e.g.: with GBDK)"
+  s.summary     = "Converts .GBR, .GBM and .MOD files to different Game Boy formats"
+  s.description = "Allows files created with Harry Mulder's Game Boy Map Builder " +
+                  "and Game Boy Tile Designer to be converted for use in " +
+                  "Game Boy game development. Also allows .MOD tracker files " +
+                  "to be converted for use with AntonioND's GBT Player."
 
   s.files = Dir["lib/**/*", "bin/*", "README.md", "LICENSE"]
 
@@ -17,8 +20,9 @@ spec = Gem::Specification.new do |s|
   s.bindir = "bin"
   s.executables << "gbr"
   s.executables << "gbm"
+  s.executables << "gbt"
 
-  s.add_runtime_dependency("gli", "2.12.2")
+  s.add_runtime_dependency("gli", "~> 2.13")
 
   s.add_development_dependency("rspec", "3.3.0")
 end

@@ -6,7 +6,7 @@
 ; <%= map_set.producer.first.name %> (v<%= map_set.producer.first.version %>)
 ; <%= map_set.producer.first.info %>
 
-.area _CODE_<%= map_export_settings.bank -%>
+.area _CODE_<%= bank -%>
 
 <% map_set.map.each do |map| -%>
 <% map_tile_data = map_set.map_tile_data(map.master_id).first -%>

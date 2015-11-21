@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+require "gli"
+include GLI::App
+
+require "gbtiles/version"
+require "gbtiles/gbt/cli/convert"
+
+program_desc "Converts .MOD files to different formats for the Game Boy"
+
+version GBTiles::VERSION
+
+pre do |global,command,options,args|
+  true
+end
+
+post do |global,command,options,args|
+  true
+end
+
+on_error do |exception|
+  true
+end
+
+exit run(ARGV)

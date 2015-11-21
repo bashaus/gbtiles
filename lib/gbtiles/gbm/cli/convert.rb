@@ -2,12 +2,15 @@ require "gbtiles/helpers/data_type"
 require "gbtiles/gbm/import/gbm_file"
 require "gbtiles/gbm/export/asm/asm"
 
-desc "Convert a file from GBM format"
+desc "Converts .GBM files to different formats for the Game Boy"
 arg_name "input"
 command :convert do |c|
 
   c.desc "Output filename [*.s]"
   c.flag :output
+
+  c.desc "ROM Bank"
+  c.flag :bank
 
   c.desc "Layer type of the map [bkg, win, sprite]"
   c.flag :layer,
@@ -39,6 +42,11 @@ command :convert do |c|
 
     # Do export
     export = GBTiles::GBM::Export::ASM::ASM.new
+
+    if !options[:bank].nil? then
+      export.bank = options[:bank].to_i
+    end
+
     export.map_set = import.map_set
     export.layer = options[:layer]
     export.write(output_file)

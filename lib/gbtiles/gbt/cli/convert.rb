@@ -1,8 +1,8 @@
 require "gbtiles/helpers/data_type"
-require "gbtiles/gbr/import/gbr_file"
-require "gbtiles/gbr/export/asm/asm"
+require "gbtiles/gbt/import/mod_file"
+require "gbtiles/gbt/export/asm/asm"
 
-desc "Converts .GBR files to different formats for the Game Boy"
+desc "Converts .MOD files to different formats for the Game Boy"
 arg_name "input"
 command :convert do |c|
 
@@ -10,7 +10,11 @@ command :convert do |c|
   c.flag :output
 
   c.desc "ROM Bank"
+  c.default_value 2
   c.flag :bank
+
+  c.desc "Label"
+  c.flag :label
 
   c.action do |global_options,options,args|
     # Prepare input file
@@ -32,17 +36,22 @@ command :convert do |c|
     end
 
     # Do import
-    import = GBTiles::GBR::Import::GBRFile.open(input_file)
+    import = GBTiles::GBT::Import::MODFile.open(input_file)
     input_file.close
 
     # Do export
-    export = GBTiles::GBR::Export::ASM::ASM.new
+    export = GBTiles::GBT::Export::ASM::ASM.new
+    export.bank = options[:bank].to_i
+    export.mod_data = import.mod_data
 
-    if !options[:bank].nil? then
-      export.bank = options[:bank].to_i
+    if !options[:label].nil? then
+      # Use label from CLI
+      export.label = options[:label]
+    elsif !options[:output].nil? then
+      # Use filename
+      export.label = File.basename(options[:output], ".*")
     end
 
-    export.tile_set = import.tile_set
     export.write(output_file)
     output_file.close
   end

@@ -1,31 +1,32 @@
-require "gbtiles/gbm/layer"
-
+require "gbtiles/gbt/export/asm/converter"
 require "erb"
 
 module GBTiles
-  module GBM
+  module GBT
     module Export
       module ASM
         class ASM
           include ERB::Util
 
           attr_accessor :bank
-          attr_accessor :map_set
-          attr_accessor :layer
+          attr_accessor :label
+          attr_accessor :mod_data
+          attr_accessor :converter
 
           def initialize
+            @converter = GBTiles::GBT::Export::ASM::Converter.new
           end
 
           def prerender
-            if @map_set.nil? then
-              raise "Missing required map"
+            if !@bank.is_a? Numeric then
+              raise "Bank must be numeric"
             end
 
-            if @layer.nil? then
-              raise "Missing required layer (bkg, win, sprite)"
+            if @mod_data.nil? then
+              raise "Missing required mod data"
             end
 
-            @bank ||= @map_set.map_export_settings.first.bank
+            @label ||= mod_data.name
           end
 
           def render_s

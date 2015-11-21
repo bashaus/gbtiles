@@ -7,6 +7,7 @@ module GBTiles
         class ASM
           include ERB::Util
 
+          attr_accessor :bank
           attr_accessor :tile_set
 
           def initialize
@@ -16,6 +17,8 @@ module GBTiles
             if @tile_set.nil? then
               raise "Missing required tile set"
             end
+
+            @bank ||= @tile_set.tile_export.first.bank
           end
 
           def render_s

@@ -1,0 +1,20 @@
+; .S created with
+; GBTiles Ruby Gem (v<%= GBTiles::VERSION %>) - GBT
+
+.area _CODE_<%= bank -%>
+
+<% for i in 0..(mod_data.pattern_table.max) do %>
+<%= "_#{label}#{i}" %>:
+<% for j in 0..63 -%>
+.db <%= converter.convert(mod_data.patterns[i].rows[j]) %>
+<% end -%>
+<% end -%>
+
+.globl <%= "_#{label}" %>
+.dw <%= "_#{label}" %>
+
+<%= "_#{label}" %>:
+<% for i in 0..(mod_data.song_length - 1) -%>
+.dw <%= "_#{label}#{i}" %>
+<% end -%>
+.dw 0x0000

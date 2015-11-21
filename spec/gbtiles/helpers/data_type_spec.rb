@@ -43,4 +43,10 @@ RSpec.describe GBTiles::DataType, "#string!" do
     GBTiles::DataType.string!(string, 3)
     expect(string.length).to eql(initial_length - 3)
   end
+
+  it "returns nil when nil is provided" do
+    string = nil
+    GBTiles::DataType.string!(string)
+    expect(string).to be_nil
+  end
 end

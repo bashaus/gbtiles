@@ -7,7 +7,27 @@ RSpec.describe GBTiles::GBM::Import::GBMFile, "#open" do
     end
 
     it "raises an error" do
-      expect { @gbm = GBTiles::GBM::Import::GBMFile.open @file }.to raise_error(IOError)
+      expect { GBTiles::GBM::Import::GBMFile.open @file }.to raise_error(IOError)
+    end
+  end
+
+  context "with an invalid version in the file header" do
+    before do
+      @file = File.open "spec/fixtures/gbm/gbm_file/invalid-version.gbm", "rb"
+    end
+
+    it "raises an error" do
+      expect { GBTiles::GBM::Import::GBMFile.open @file }.to raise_error(IOError)
+    end
+  end
+
+  context "with an invalid header marker" do
+    before do
+      @file = File.open "spec/fixtures/gbm/gbm_file/invalid-marker.gbm", "rb"
+    end
+
+    it "raises an error" do
+      expect { GBTiles::GBM::Import::GBMFile.open @file }.to raise_error
     end
   end
 

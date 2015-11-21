@@ -21,9 +21,7 @@ module GBTiles
               number = 0.chr + number # Convert from 24-bit to 32-bit
               number = number.unpack("N").first # Unpack integer
 
-              object.records.push(
-                GBTiles::GBM::Map::Objects::MapTileDataRecord.initFromBitString(number)
-              )
+              object.records << GBTiles::GBM::Map::Objects::MapTileDataRecord.initFromBitString(number)
             end
 
             object

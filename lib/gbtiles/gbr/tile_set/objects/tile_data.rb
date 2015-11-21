@@ -59,7 +59,7 @@ module GBTiles
                 bitmask >>= 1
               end
 
-              tile.push(sprintf("0x%02x,0x%02x", byte_0, byte_1))
+              tile << sprintf("0x%02x,0x%02x", byte_0, byte_1)
             end
 
             tile.join(",")

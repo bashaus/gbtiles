@@ -75,7 +75,7 @@ module GBTiles
 
             object.object_id = object_id
 
-            import.tile_set.objects.push object
+            import.tile_set.objects << object
           end
 
           import

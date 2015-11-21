@@ -82,7 +82,7 @@ module GBTiles
             object.object_id = object_id
             object.master_id = master_id
 
-            import.map_set.objects.push object
+            import.map_set.objects << object
           end
 
           import
